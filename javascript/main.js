@@ -290,3 +290,5 @@ const deleteAluno = async (id) => {
   
   deleteAluno(5);
 */
+
+render ()
