@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Cadastro de Alunos</title>
+    <link rel="stylesheet" href="./style/style.css">
+
+    <script src="./javascript/main.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <div class="panel">
+      <section class="form-section" aria-labelledby="form-title">
+        <h2 id="form-title">Cadastrar aluno</h2>
+        <form id="student-form" novalidate>
+          <input type="hidden" id="student-id">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Nome completo *</label>
+              <input id="name" name="name" type="text" placeholder="Como o aluno se chama?" autocomplete="name" required maxlength="100">
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" placeholder="nome@exemplo.com" autocomplete="email" maxlength="120">
+            </div>
+            <div class="field">
+              <label for="phone">Celular</label>
+              <input id="phone" name="phone" type="tel" placeholder="(00) 00000-0000" autocomplete="tel" maxlength="15">
+            </div>
+            <div class="field">
+              <label for="city">Cidade</label>
+              <input id="city" name="city" type="text" placeholder="Informe a cidade" autocomplete="address-level2" maxlength="70">
+            </div>
+            <div class="field">
+              <label for="state">Estado</label>
+              <select id="state" name="state">
+                <option value="">Selecione o estado</option>
+                <option value="AC">Acre</option><option value="AL">Alagoas</option><option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option><option value="BA">Bahia</option><option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option><option value="ES">Espírito Santo</option><option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option><option value="MT">Mato Grosso</option><option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option><option value="PA">Pará</option><option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option><option value="PE">Pernambuco</option><option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option><option value="RN">Rio Grande do Norte</option><option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option><option value="RR">Roraima</option><option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option><option value="SE">Sergipe</option><option value="TO">Tocantins</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="cep">CEP</label>
+              <input id="cep" name="cep" type="text" inputmode="numeric" placeholder="00000-000" autocomplete="postal-code" maxlength="9">
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-light" type="button" id="clear-button">Limpar campos</button>
+            <button class="btn btn-primary" type="submit" id="save-button">Salvar</button>
+          </div>
+          <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <section class="list-section" aria-labelledby="list-title">
+        <div class="list-top">
+          <h2 id="list-title">Alunos cadastrados</h2>
+          <div class="search">
+            <label for="search">Buscar aluno</label>
+            <input id="search" type="search" placeholder="Buscar por nome ou e-mail">
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Aluno</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Celular</th>
+                <th scope="col">Cidade / UF</th>
+                <th scope="col">CEP</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="student-list"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
